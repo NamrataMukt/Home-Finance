@@ -1,17 +1,25 @@
 package in.cjctech.wonderhomeapp.app.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.cjctech.wonderhomeapp.app.model.Enquiry;
+import in.cjctech.wonderhomeapp.app.service.EnquiryService;
 
 @RestController
 public class EnquiryController 
 {
-	public ResponseEntity<Enquiry> createEnquier(@RequestBody Enquiry enquiry)
+	@Autowired private EnquiryService es;
+	
+	@PostMapping("/Customers")
+	public ResponseEntity<Enquiry> createEnquiry(@RequestBody Enquiry enquiry)
 	{
-		return null;
+		Enquiry enq= es.addEnquiry(enquiry);
+		return new ResponseEntity<Enquiry>(enquiry,HttpStatus.CREATED);
 		
 	}
 }

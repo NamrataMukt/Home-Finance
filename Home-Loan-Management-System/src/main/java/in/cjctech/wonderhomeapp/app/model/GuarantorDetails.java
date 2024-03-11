@@ -28,5 +28,6 @@ public class GuarantorDetails
 	private String guarantorCityName;
 	private String guarantorJobDetails;
 	private String guarantorAreaName;
+	private byte adhaar;
 	
 }
