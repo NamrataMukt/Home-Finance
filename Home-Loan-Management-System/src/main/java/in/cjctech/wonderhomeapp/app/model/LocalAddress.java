@@ -24,5 +24,17 @@ public class LocalAddress
 	private String district;
 	private String state;
 	private int pincode;
+	private byte[] localAddressProof;
 
 }
+
+
+//{
+//	"houseNo":"a-20",
+//	"areaName":"abc",
+//	"streetName":"pqr",
+//	"cityName":"mno",
+//	"district":"xyz",
+//	"state":"lmn",
+//	"pincode":112233
+//}

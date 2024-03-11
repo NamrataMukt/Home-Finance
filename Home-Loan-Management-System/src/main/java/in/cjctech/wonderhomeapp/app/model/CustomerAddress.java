@@ -25,3 +25,5 @@ public class CustomerAddress
 	private LocalAddress localAddress;
 
 }
+
+

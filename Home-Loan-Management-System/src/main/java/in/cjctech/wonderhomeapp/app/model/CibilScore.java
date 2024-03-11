@@ -1,5 +1,7 @@
 package in.cjctech.wonderhomeapp.app.model;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 
 import jakarta.persistence.GeneratedValue;
