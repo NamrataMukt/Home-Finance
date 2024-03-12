@@ -1,5 +1,6 @@
 package in.cjctech.wonderhomeapp.app.model;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,3 +32,17 @@ public class SanctionLetter
 	private double monthlyEmiAmount;
 	private String sanctionstatus;
 }
+
+//{
+//	"sanctionDate":"12-03-2024",
+//	"applicantName":"Am",
+//	"contactDetails":"cel",
+//	"loanAmountSanctioned":900000,
+//	"interestType":"xyz",
+//	"rateOfInterest":7.7,
+//	"loanTenure":2,
+//	"monthlyEmiAmount":4000,
+//	"modeOfPayment":"mno"
+//	
+//	
+//}
