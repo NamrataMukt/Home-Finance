@@ -1,12 +1,13 @@
 package in.cjctech.wonderhomeapp.app.model;
 
-import java.sql.Date;
-import java.sql.Time;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +22,7 @@ public class GuarantorDetails
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int guarantorId;
 	private String guarantorName;
+	@Temporal(TemporalType.DATE)
 	private String guarantorDOB;
 	private String guarantorRelationshipWithApplicant;
 	private long guarantorMobileNumber;
@@ -28,6 +30,8 @@ public class GuarantorDetails
 	private String guarantorCityName;
 	private String guarantorJobDetails;
 	private String guarantorAreaName;
-	private byte adhaar;
+	@Lob
+	@Column(length=99999999)
+	private byte[] adhaar;
 	
 }

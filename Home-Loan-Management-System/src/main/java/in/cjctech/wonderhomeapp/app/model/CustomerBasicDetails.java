@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,8 +23,9 @@ public class CustomerBasicDetails
 	private long customerMobileNumber;
 	private String customerEmailId;
 	private long  adharNumber;
-	private long pancardNumber;
+	private String pancardNumber;
 	private String gender;
+	@Temporal(TemporalType.DATE)
 	private String customerDOB;
 	private int age;
 	private String loanType;
@@ -31,5 +34,4 @@ public class CustomerBasicDetails
 	private double totalLoanRequired;
 	private int cibilScore;
 	
-
 }
