@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Enquiry implements Serializable
+public class Enquiry
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,11 +33,8 @@ public class Enquiry implements Serializable
 	private int pincode;
 	@Temporal(TemporalType.DATE)
 	private Date date;  
-//	@Temporal(TemporalType.TIMESTAMP)
-//	private Calendar timeOfEnquiry;
 	private String enquiry;
 	@OneToOne(cascade = CascadeType.ALL)
 	private CibilScore cibilScore;
 	
-
 }

@@ -1,6 +1,8 @@
 package in.cjctech.wonderhomeapp.app.model;
 
 
+import java.util.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,7 +26,7 @@ public class GuarantorDetails
 	private int guarantorId;
 	private String guarantorName;
 	@Temporal(TemporalType.DATE)
-	private String guarantorDOB;
+	private Date guarantorDOB;
 	private String guarantorRelationshipWithApplicant;
 	private long guarantorMobileNumber;
 	private long aadhaarcardNumber;

@@ -1,5 +1,7 @@
 package in.cjctech.wonderhomeapp.app.model;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,7 +28,7 @@ public class CustomerBasicDetails
 	private String pancardNumber;
 	private String gender;
 	@Temporal(TemporalType.DATE)
-	private String customerDOB;
+	private Date customerDOB;
 	private int age;
 	private String loanType;
 	private String maritalStatus;
