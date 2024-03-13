@@ -1,9 +1,13 @@
 package in.cjctech.wonderhomeapp.app.model;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,7 +21,8 @@ public class SanctionLetter
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long sanctionId;
-	private String sanctionDate;
+	@Temporal(TemporalType.DATE)
+	private Date sanctionDate;
 	private String applicantName;
 	private String contactDetails;
 	private double loanAmountSanctioned;
@@ -28,3 +33,17 @@ public class SanctionLetter
 	private String modeOfPayment;
 
 }
+
+//{
+//	"sanctionDate":"12-03-2024",
+//	"applicantName":"Am",
+//	"contactDetails":"cel",
+//	"loanAmountSanctioned":900000,
+//	"interestType":"xyz",
+//	"rateOfInterest":7.7,
+//	"loanTenure":2,
+//	"monthlyEmiAmount":4000,
+//	"modeOfPayment":"mno"
+//	
+//	
+//}

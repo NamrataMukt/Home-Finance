@@ -26,3 +26,18 @@ public class DependantDetails
 	private int noOfFamilyMember;
 
 }
+
+
+//{
+//	"fatherName":"Mno",
+//	"motherName":"xyz",
+//	"maritalStatus":"unmarried",
+//	"numberOfChild":0,
+//	"familyIncome":4646576,
+//	"spouseName":"no",
+//	"noOfFamilyMember":4
+//	
+//	
+//	
+//	
+//}

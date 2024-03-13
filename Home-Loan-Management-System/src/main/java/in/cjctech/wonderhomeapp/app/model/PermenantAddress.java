@@ -24,5 +24,6 @@ public class PermenantAddress
 	private String district;
 	private String state;
 	private int pincode;
+//	private byte permenantAddressProof;
 
 }
