@@ -1,6 +1,8 @@
 package in.cjctech.wonderhomeapp.app.model;
 
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,7 +23,7 @@ public class SanctionLetter
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long sanctionId;
 	@Temporal(TemporalType.DATE)
-	private String sanctionDate;
+	private Date sanctionDate;
 	private String applicantName;
 	private String contactDetails;
 	private String applicantemailid;
