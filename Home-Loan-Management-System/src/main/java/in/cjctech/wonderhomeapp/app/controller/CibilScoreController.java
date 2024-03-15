@@ -21,7 +21,7 @@ public class CibilScoreController
 	public ResponseEntity<CibilScore> createcibil(@PathVariable long applicantid,@RequestBody CibilScore cb)
 	{
 		CibilScore cb1=cs.addCibil(applicantid,cb);
-		return new ResponseEntity<CibilScore>(cb, HttpStatus.CREATED);
+		return new ResponseEntity<CibilScore>(cb1, HttpStatus.CREATED);
 	}
 
 }
