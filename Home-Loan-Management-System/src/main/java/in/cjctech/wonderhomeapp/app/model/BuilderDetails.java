@@ -14,26 +14,25 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class LoanDisbursement 
+public class BuilderDetails 
 {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long aggrementId;
-	private long loanNumber;
-	private String aggrementDate;
-	private String amountPayTime;
-	private double totalAmount;
+	private long builderId;
+	private String builderName;
+	private long builderaAdharcard;
+	private String builderPancard;
+	private String builderaddress;
 	private String bankName;
-	private long accountNumber;
-	private String ifscCode;
-	private String AccountType;
-	private double transferAmount;
-	private String paymentStatus;
-	private String AmountPaidDate;
+	private long bankAccno;
+	private String bankIfscCode;
+	@Lob
+	@Column(length=999999999)
+	private byte[] panCard;
 	
 	@Lob
 	@Column(length=999999999)
-	private byte[] propertyInsurance;
-
-
-}
+	private byte[] aadharCard;
+	
+ }

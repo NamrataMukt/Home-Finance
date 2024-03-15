@@ -1,9 +1,11 @@
 package in.cjctech.wonderhomeapp.app.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,11 +20,13 @@ public class Mortage
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long mortageId;
 	private double propertyValue;
-	private byte[] propertyProof;
-	private byte[] propertyInsurance;
+	private long reraNumber;
 	private String propertyType;
-	private double loanOnProperty;
-	private long reraNumber; 
+	private int tenure;
+	private double totalLoanRequired;	
 	
-
+	@Lob
+	@Column(length=999999999)
+	private byte[] propertyProof;
+	
 }

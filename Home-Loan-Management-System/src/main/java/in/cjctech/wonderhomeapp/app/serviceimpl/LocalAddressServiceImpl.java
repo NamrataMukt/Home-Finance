@@ -16,7 +16,6 @@ public class LocalAddressServiceImpl implements LocalAddressService
 	@Override
 	public LocalAddress saveLocalAddress(LocalAddress la) 
 	{
-		
 		return lar.save(la);
 	}
 	

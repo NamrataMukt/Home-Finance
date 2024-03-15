@@ -2,10 +2,12 @@ package in.cjctech.wonderhomeapp.app.model;
 
 import java.util.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
@@ -24,16 +26,15 @@ public class CustomerBasicDetails
 	private String customerName;
 	private long customerMobileNumber;
 	private String customerEmailId;
-	private long  adharNumber;
-	private String pancardNumber;
 	private String gender;
 	@Temporal(TemporalType.DATE)
 	private Date customerDOB;
 	private int age;
-	private String loanType;
-	private String maritalStatus;
-	private String statusCode;
-	private double totalLoanRequired;
+	private long  adharNumber;
+	private String pancardNumber;
 	private int cibilScore;
-	
+	private String cibilScoreStatus;
+	private long AmountPaidforHome;
+	private long TotalloanRequired;
+		
 }

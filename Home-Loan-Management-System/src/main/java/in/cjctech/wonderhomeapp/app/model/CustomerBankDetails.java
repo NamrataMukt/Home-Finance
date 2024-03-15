@@ -1,5 +1,4 @@
 package in.cjctech.wonderhomeapp.app.model;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,26 +13,21 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class LoanDisbursement 
+
+public class CustomerBankDetails 
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long aggrementId;
-	private long loanNumber;
-	private String aggrementDate;
-	private String amountPayTime;
-	private double totalAmount;
-	private String bankName;
-	private long accountNumber;
-	private String ifscCode;
-	private String AccountType;
-	private double transferAmount;
-	private String paymentStatus;
-	private String AmountPaidDate;
+	private long bankdetailsId;
 	
+	private long bankAccountNo;
+	private  String bankName;
+	private String bankIFSCCode;
+	private String bankAddress;
+	private long bankConatactNo;
 	@Lob
 	@Column(length=999999999)
-	private byte[] propertyInsurance;
-
+	private byte[] bankStatment;//pdf
+	
 
 }
