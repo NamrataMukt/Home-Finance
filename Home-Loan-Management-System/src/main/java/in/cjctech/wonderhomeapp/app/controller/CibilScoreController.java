@@ -24,4 +24,5 @@ public class CibilScoreController
 		return new ResponseEntity<CibilScore>(cb1, HttpStatus.CREATED);
 	}
 
+	
 }
