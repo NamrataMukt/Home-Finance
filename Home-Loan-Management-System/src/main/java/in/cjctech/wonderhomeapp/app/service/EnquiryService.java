@@ -6,4 +6,6 @@ public interface EnquiryService {
 
 	Enquiry addEnquiry(Enquiry enquiry);
 
+	public Enquiry updateEnquiry(long applicantId, Enquiry updatedEnquiry);
+
 }
