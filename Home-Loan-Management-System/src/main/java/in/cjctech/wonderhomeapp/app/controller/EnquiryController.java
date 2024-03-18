@@ -6,8 +6,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,7 +30,11 @@ public class EnquiryController
 		return new ResponseEntity<Enquiry>(enq,HttpStatus.CREATED);
 		
 	}
-	
-	
-	
+
+    @PutMapping("/updateEnquiry/{applicantId}")
+    public ResponseEntity<Enquiry> updateEnquiry(@PathVariable long applicantId, @RequestBody Enquiry updatedEnquiry) {
+        Enquiry updatedEnquiryResult = es.updateEnquiry(applicantId,updatedEnquiry);
+        return ResponseEntity.ok(updatedEnquiryResult);
+    }
+
 }

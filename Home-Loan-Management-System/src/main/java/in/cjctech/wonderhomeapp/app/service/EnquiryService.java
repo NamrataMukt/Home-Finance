@@ -7,6 +7,10 @@ public interface EnquiryService {
 
 	Enquiry addEnquiry(Enquiry enquiry);
 
+
 	void addCibilScore(long applicantid, CibilScore cibilscore);
+
+	public Enquiry updateEnquiry(long applicantId, Enquiry updatedEnquiry);
+
 
 }
