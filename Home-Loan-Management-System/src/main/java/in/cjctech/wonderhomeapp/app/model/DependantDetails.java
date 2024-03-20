@@ -20,10 +20,10 @@ public class DependantDetails
 	private String fatherName;
 	private String motherName;
 	private String maritalStatus;
-	private int numberOfChild;
-	private double familyIncome;
 	private String spouseName;
-	private int noOfFamilyMember;
+	private int numberOfChild;
+	private int noOfDependentMember;
+	private double totalfamilyIncome;
 
 }
 

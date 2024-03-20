@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Enquiry
+public class Enquiry implements Serializable
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,7 +34,7 @@ public class Enquiry
 	@Temporal(TemporalType.DATE)
 	private Date date;  
 	private String enquiry;
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.MERGE)
 	private CibilScore cibilScore;
 	
 }

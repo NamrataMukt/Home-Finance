@@ -17,7 +17,6 @@ public class CustomerAddressServiceImpl implements CustomerAddressService
 	public CustomerAddress saveAddressData(CustomerAddress ca) 
 	{
 		CustomerAddress caddr=car.save(ca);
-		
 		return caddr;
 	}
 	
