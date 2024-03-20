@@ -24,12 +24,12 @@ public class GuarantorDetailsServiceImpl implements GuarantorDetailsService
 	
 
 	@Override
-	public GuarantorDetails saveGurantorDetails(String gurantor, MultipartFile adhaar)
+	public GuarantorDetails saveGurantorDetails(String gurantor, MultipartFile Gaadhar)
 	{
 		ObjectMapper mapper=new ObjectMapper();
 		try {
 			GuarantorDetails gd=mapper.readValue(gurantor,GuarantorDetails.class);
-				gd.setAdhaar(adhaar.getBytes());
+				gd.setGadhaar(Gaadhar.getBytes());
 				gdr.save(gd);
 		} 
 		

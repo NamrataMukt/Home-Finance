@@ -10,8 +10,7 @@ public interface BuilderDetailsService
 {
 
 	
-	public BuilderDetails addBuilder(String builderdetails, MultipartFile pan, MultipartFile aadhar,
-			MultipartFile bankPassbook);
+	public BuilderDetails addBuilder(String builderdetails, MultipartFile BPan, MultipartFile Baadhar);
 
 	public List<BuilderDetails> getAllData();
 

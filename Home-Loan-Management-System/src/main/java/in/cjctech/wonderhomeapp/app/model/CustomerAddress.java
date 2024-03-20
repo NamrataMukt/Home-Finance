@@ -20,10 +20,10 @@ public class CustomerAddress
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long customerAddressId;
 	
-	@OneToOne(cascade = CascadeType.MERGE)
+	@OneToOne(cascade = CascadeType.ALL)
 	private PermenantAddress permenantAddress;
 	
-	@OneToOne(cascade = CascadeType.MERGE)
+	@OneToOne(cascade = CascadeType.ALL)
 	private LocalAddress localAddress;
 	
 }

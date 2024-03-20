@@ -22,11 +22,10 @@ public class BuilderDetailsController
 	
 	@PostMapping("/savebuilder")
 	public  ResponseEntity<BuilderDetails> createBuilder(@RequestPart("builderdetails") String builderdetails,
-														@RequestPart("pan") MultipartFile pan,
-														@RequestPart("aadhar") MultipartFile aadhar,
-														@RequestPart("bankPassbook") MultipartFile bankPassbook)
+														@RequestPart("BPan") MultipartFile BPan,
+														@RequestPart("Baadhar") MultipartFile Baadhar)
 	{
-		BuilderDetails bd1=bds.addBuilder(builderdetails,pan,aadhar,bankPassbook);
+		BuilderDetails bd1=bds.addBuilder(builderdetails,BPan,Baadhar);
 		return new ResponseEntity<BuilderDetails>(bd1, HttpStatus.CREATED);
 	}
 	

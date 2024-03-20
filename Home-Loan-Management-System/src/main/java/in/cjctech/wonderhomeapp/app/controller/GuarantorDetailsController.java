@@ -23,9 +23,9 @@ public class GuarantorDetailsController
 	
 	@PostMapping("/saveGurantorDetails")
 	public ResponseEntity<GuarantorDetails> saveAddress(@RequestPart("gurantor") String gurantor,
-														@RequestPart("adhaar") MultipartFile adhaar)
+														@RequestPart("Gaadhar") MultipartFile Gaadhar)
 	{
-		GuarantorDetails gd1=gds.saveGurantorDetails(gurantor,adhaar);
+		GuarantorDetails gd1=gds.saveGurantorDetails(gurantor,Gaadhar);
 		return new ResponseEntity<GuarantorDetails>(gd1,HttpStatus.CREATED);
 	}
 	

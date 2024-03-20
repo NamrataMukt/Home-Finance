@@ -5,8 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import in.cjctech.wonderhomeapp.app.model.CustomerApplicationForm;
 
+
 @Repository
 public interface ApplicantRepository extends JpaRepository<CustomerApplicationForm,Long>
 {
+
+	
 
 }

@@ -22,14 +22,13 @@ public class BuilderDetailsServiceImpl  implements BuilderDetailsService
 	BuilderDetailsRepository bdr;
 
 		@Override
-	public BuilderDetails addBuilder(String builderdetails, MultipartFile pan, MultipartFile aadhar,
-			MultipartFile bankPassbook) 
+	public BuilderDetails addBuilder(String builderdetails, MultipartFile BPan, MultipartFile Baadhar) 
 		{
 			ObjectMapper mapper=new ObjectMapper();
 			try {
 				BuilderDetails bd=mapper.readValue(builderdetails,BuilderDetails.class);
-					bd.setAadharCard(aadhar.getBytes());
-					bd.setPanCard(pan.getBytes());
+					bd.setBaadharCard(Baadhar.getBytes());
+					bd.setBpanCard(BPan.getBytes());
 					
 					bdr.save(bd);
 			} 

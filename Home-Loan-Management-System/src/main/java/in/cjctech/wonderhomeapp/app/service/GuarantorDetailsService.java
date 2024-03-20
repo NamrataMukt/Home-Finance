@@ -11,7 +11,7 @@ public interface GuarantorDetailsService
 
 
 
-public GuarantorDetails saveGurantorDetails(String gurantor, MultipartFile adhaar);
+public GuarantorDetails saveGurantorDetails(String gurantor, MultipartFile Gaadhar);
 
 public List<GuarantorDetails> getAllGurantor();
 

@@ -34,7 +34,7 @@ public class CustomerBasicDetails
 	private String pancardNumber;
 	private int cibilScore;
 	private String cibilScoreStatus;
-	private long AmountPaidforHome;
-	private long TotalloanRequired;
+	private long tokenmoney;
+	private long loanRequired;
 		
 }

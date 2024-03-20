@@ -20,31 +20,34 @@ public class CustomerApplicationForm
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long applicationNumber;
 	
-	@OneToOne(cascade = CascadeType.MERGE)
+	@OneToOne(cascade = CascadeType.ALL)
 	private CustomerBasicDetails cutomerDetails;
 	
-	@OneToOne(cascade = CascadeType.MERGE)
+	@OneToOne(cascade = CascadeType.ALL)
 	private DependantDetails applicantDependant;
 	
-	@OneToOne(cascade = CascadeType.MERGE)
+	@OneToOne(cascade = CascadeType.ALL)
 	private CustomerAddress customerAddress;
 	
-	@OneToOne(cascade = CascadeType.MERGE)
+	@OneToOne(cascade = CascadeType.ALL)
 	private EmploymentDetails employmentDetails;
 	
-	@OneToOne(cascade = CascadeType.MERGE)
+	@OneToOne(cascade = CascadeType.ALL)
+	private PreviousLoanDetails previousloandata;
+	
+	@OneToOne(cascade = CascadeType.ALL)
 	private Mortage mortage;
 	
-	@OneToOne(cascade = CascadeType.MERGE)
+	@OneToOne(cascade = CascadeType.ALL)
 	private GuarantorDetails guarantorDetails;
 	
-	@OneToOne(cascade = CascadeType.MERGE)
+	@OneToOne(cascade = CascadeType.ALL)
 	private  CustomerBankDetails  customerbankDetail;
 	
-	@OneToOne(cascade = CascadeType.MERGE)
+	@OneToOne(cascade = CascadeType.ALL)
 	private BuilderDetails builderdetails;
 	
-	@OneToOne(cascade = CascadeType.MERGE)
+	@OneToOne(cascade = CascadeType.ALL)
 	private CustomerDocumentUpload documentUpload;
 	
 	

@@ -47,7 +47,7 @@ public class CustomerDocumentUpload
 
 	@Lob
 	@Column(length=999999999)
-	private byte[] IncometaxReturn;
+	private byte[] incometaxReturn;
 	
 	@Lob
 	@Column(length=999999999)

@@ -23,7 +23,7 @@ public class DependantDetails
 	private String spouseName;
 	private int numberOfChild;
 	private int noOfDependentMember;
-	private double totalfamilyIncome;
+	private double familyIncome;
 
 }
 

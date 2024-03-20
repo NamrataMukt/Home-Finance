@@ -29,7 +29,7 @@ public class LoanDisbursement
 	private String AccountType;
 	private double transferAmount;
 	private String paymentStatus;
-	private String AmountPaidDate;
+	private String amountPaidDate;
 	
 	@Lob
 	@Column(length=999999999)

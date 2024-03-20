@@ -25,6 +25,6 @@ public class PreviousLoanDetails
 	private String bankName;
 	private String ifscCode;
 	private String bankAddress;
-	private long bankConatactNo;
+	
 
 }

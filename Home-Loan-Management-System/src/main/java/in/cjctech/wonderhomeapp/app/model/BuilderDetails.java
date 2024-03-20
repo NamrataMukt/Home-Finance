@@ -21,18 +21,18 @@ public class BuilderDetails
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long builderId;
 	private String builderName;
-	private long builderaAdharcard;
+	private long builderAdharcard;
 	private String builderPancard;
-	private String builderaddress;
+	private String builderAddress;
 	private String bankName;
 	private long bankAccno;
 	private String bankIfscCode;
 	@Lob
 	@Column(length=999999999)
-	private byte[] panCard;
+	private byte[] bpanCard;
 	
 	@Lob
 	@Column(length=999999999)
-	private byte[] aadharCard;
+	private byte[] baadharCard;
 	
  }
