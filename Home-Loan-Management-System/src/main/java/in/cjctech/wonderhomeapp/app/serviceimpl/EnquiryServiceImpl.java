@@ -48,5 +48,11 @@ public class EnquiryServiceImpl implements EnquiryService {
         return er.save(existingEnquiry);
     }
 
+	@Override
+	public Enquiry getCibilScoreByApplicantId(Long customerId) {
+		// TODO Auto-generated method stub
+		return er.findByCustomerId(customerId);
+	}
+
 	
 }

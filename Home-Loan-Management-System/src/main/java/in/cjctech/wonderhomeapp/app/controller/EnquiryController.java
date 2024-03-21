@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 
 
 import org.springframework.web.bind.annotation.CrossOrigin;
-
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 
@@ -19,8 +19,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
-
+import in.cjctech.wonderhomeapp.app.model.CibilScore;
 import in.cjctech.wonderhomeapp.app.model.Enquiry;
 import in.cjctech.wonderhomeapp.app.service.EnquiryService;
 
@@ -43,6 +42,18 @@ public class EnquiryController
     public ResponseEntity<Enquiry> updateEnquiry(@PathVariable long customerId, @RequestBody Enquiry updatedEnquiry) {
         Enquiry updatedEnquiryResult = es.updateEnquiry(customerId,updatedEnquiry);
         return ResponseEntity.ok(updatedEnquiryResult);
+    }
+    
+  
+    
+    @GetMapping("cibil/{customerId}")
+    public ResponseEntity<Enquiry> getCibilScore(@PathVariable Long customerId) {
+        Enquiry cibilScore = es.getCibilScoreByApplicantId(customerId);
+       
+            return ResponseEntity.ok(cibilScore);
+        
+            
+  
     }
 
 }

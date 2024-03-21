@@ -13,4 +13,7 @@ public interface EnquiryService {
 	public Enquiry updateEnquiry(long customerId, Enquiry updatedEnquiry);
 
 
+	Enquiry getCibilScoreByApplicantId(Long customerId);
+
+
 }
