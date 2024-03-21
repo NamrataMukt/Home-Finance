@@ -9,6 +9,6 @@ import in.cjctech.wonderhomeapp.app.model.Enquiry;
 @Repository
 public interface EnquiryRepository extends JpaRepository<Enquiry, Long> {
 
-	public Optional<Enquiry> findAllByApplicantId(long applicantid);
+	public Optional<Enquiry> findAllByCustomerId(long customerId);
 
 }

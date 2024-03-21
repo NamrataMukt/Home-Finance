@@ -39,9 +39,9 @@ public class EnquiryController
 		
 	}
 
-    @PutMapping("/updateEnquiry/{applicantId}")
-    public ResponseEntity<Enquiry> updateEnquiry(@PathVariable long applicantId, @RequestBody Enquiry updatedEnquiry) {
-        Enquiry updatedEnquiryResult = es.updateEnquiry(applicantId,updatedEnquiry);
+    @PutMapping("/updateEnquiry/{customerId}")
+    public ResponseEntity<Enquiry> updateEnquiry(@PathVariable long customerId, @RequestBody Enquiry updatedEnquiry) {
+        Enquiry updatedEnquiryResult = es.updateEnquiry(customerId,updatedEnquiry);
         return ResponseEntity.ok(updatedEnquiryResult);
     }
 
