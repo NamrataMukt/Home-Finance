@@ -21,25 +21,25 @@ public class EnquiryServiceImpl implements EnquiryService {
 	}
 	
 	@Override
-	public void  addCibilScore(long applicantid, CibilScore cibilscore) 
+	public void  addCibilScore(long customerId, CibilScore cibilscore) 
 	{
-		Optional<Enquiry> e=er.findAllByApplicantId(applicantid);
+		Optional<Enquiry> e=er.findAllByApplicantId(customerId);
 		if(e.isPresent())
 		{		
 				Enquiry e1=e.get();
 				e1.setCibilScore(cibilscore);
-				er.save(e1);
+				er.save(e1);								
 			
 		}
 	}
 
-	public Enquiry updateEnquiry(long applicantId, Enquiry updatedEnquiry) {
-        Enquiry existingEnquiry = er.findById(applicantId).orElseThrow(() -> new RuntimeException("Enquiry not found"));
+	public Enquiry updateEnquiry(long customerId, Enquiry updatedEnquiry) {
+        Enquiry existingEnquiry = er.findById(customerId).orElseThrow(() -> new RuntimeException("Enquiry not found"));
        
-        existingEnquiry.setApplicantName(updatedEnquiry.getApplicantName());
+        existingEnquiry.setCustomerName(updatedEnquiry.getCustomerName());
         existingEnquiry.setAge(updatedEnquiry.getAge());
-        existingEnquiry.setEmail(updatedEnquiry.getEmail());
-        existingEnquiry.setMobileNumber(updatedEnquiry.getMobileNumber());
+        existingEnquiry.setCustomerEmailId(updatedEnquiry.getCustomerEmailId());
+        existingEnquiry.setCustomerMobileNumber(updatedEnquiry.getCustomerMobileNumber());
         existingEnquiry.setPancardNumber(updatedEnquiry.getPancardNumber());
         existingEnquiry.setCity(updatedEnquiry.getCity());
         existingEnquiry.setPincode(updatedEnquiry.getPincode());

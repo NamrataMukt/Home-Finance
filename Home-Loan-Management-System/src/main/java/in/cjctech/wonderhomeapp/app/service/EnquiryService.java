@@ -8,9 +8,9 @@ public interface EnquiryService {
 	Enquiry addEnquiry(Enquiry enquiry);
 
 
-	void addCibilScore(long applicantid, CibilScore cibilscore);
+	void addCibilScore(long customerId, CibilScore cibilscore);
 
-	public Enquiry updateEnquiry(long applicantId, Enquiry updatedEnquiry);
+	public Enquiry updateEnquiry(long customerId, Enquiry updatedEnquiry);
 
 
 }

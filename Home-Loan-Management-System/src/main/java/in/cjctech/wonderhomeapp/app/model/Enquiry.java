@@ -23,17 +23,18 @@ public class Enquiry implements Serializable
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long applicantId;
-	private String applicantName;
+	private long customerId;
+	private String customerName;
 	private byte age;
-	private String email;
-	private long mobileNumber;
+	private String customerEmailId;
+	private long customerMobileNumber;
 	private String pancardNumber;
 	private String city;
 	private int pincode;
 	@Temporal(TemporalType.DATE)
 	private Date date;  
 	private String enquiry;
+	private String status;
 	@OneToOne(cascade = CascadeType.MERGE)
 	private CibilScore cibilScore;
 	
