@@ -30,9 +30,12 @@ public class EmployeeFormServiceImpl implements EmployeeFormService
 	@Override
 	public void DeleteEmployee(int empId) 
 	{
-		 efr.deleteById(empId);;
+		 efr.deleteById(empId);
+		 
 		
 	}
+	
+	
 
 	
 

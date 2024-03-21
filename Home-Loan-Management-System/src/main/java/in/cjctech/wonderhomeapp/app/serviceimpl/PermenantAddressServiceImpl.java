@@ -16,8 +16,7 @@ public class PermenantAddressServiceImpl implements PermenantAddressService
 	@Override
 	public PermenantAddress savePermenantAddress(PermenantAddress paddr)
 	{
-		
-		
+	
 		return par.save(paddr);
 	}
 	

@@ -1,6 +1,6 @@
 package in.cjctech.wonderhomeapp.app.serviceimpl;
 
-import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,10 +44,14 @@ public class EmploymentDetailsServiceImpl implements EmploymentDetailsService {
 		
 		return null;
 	}
+
+
+	@Override
+	public List<EmploymentDetails> getAllEmployement() 
+	{
 	
-//	public EmploymentDetails addEmploymentDetails(EmploymentDetails employmentdetails) {
-//		
-//		return er.save(employmentdetails);
-//	}
+		return er.findAll();
+	}
+	
 
 }

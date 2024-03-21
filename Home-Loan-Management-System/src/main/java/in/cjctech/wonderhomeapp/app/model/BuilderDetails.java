@@ -14,19 +14,25 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class EmploymentDetails 
+public class BuilderDetails 
 {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long professionId;
-	private String companyName;
-	private double salary;
-	private String profDesignation;
-	private int employeeWorkingPeriod;
-
+	private long builderId;
+	private String builderName;
+	private long builderAdharcard;
+	private String builderPancard;
+	private String builderAddress;
+	private String bankName;
+	private long bankAccno;
+	private String bankIfscCode;
 	@Lob
 	@Column(length=999999999)
-	private byte[] salarySlip;
+	private byte[] bpanCard;
 	
-
-}
+	@Lob
+	@Column(length=999999999)
+	private byte[] baadharCard;
+	
+ }

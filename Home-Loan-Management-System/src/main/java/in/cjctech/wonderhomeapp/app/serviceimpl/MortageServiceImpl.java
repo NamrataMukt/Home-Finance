@@ -9,28 +9,25 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import in.cjctech.wonderhomeapp.app.model.Mortage;
+import in.cjctech.wonderhomeapp.app.repository.MortageRepository;
+import in.cjctech.wonderhomeapp.app.service.MortageService;
 
-import in.cjctech.wonderhomeapp.app.model.GuarantorDetails;
-import in.cjctech.wonderhomeapp.app.repository.GuarantorDetailsRepository;
-import in.cjctech.wonderhomeapp.app.service.GuarantorDetailsService;
 
 @Service
-public class GuarantorDetailsServiceImpl implements GuarantorDetailsService
+public class MortageServiceImpl implements MortageService
 {
 
 		@Autowired
-		GuarantorDetailsRepository gdr;
+		MortageRepository mr;
 		
-	
-
 	@Override
-	public GuarantorDetails saveGurantorDetails(String gurantor, MultipartFile Gaadhar)
+	public Mortage addMortage(String mortage, MultipartFile propertyproof) 
 	{
 		ObjectMapper mapper=new ObjectMapper();
 		try {
-			GuarantorDetails gd=mapper.readValue(gurantor,GuarantorDetails.class);
-				gd.setGadhaar(Gaadhar.getBytes());
-				gdr.save(gd);
+			Mortage m=mapper.readValue(mortage,Mortage.class);
+				m.setPropertyProof(propertyproof.getBytes());
 		} 
 		
 		catch (JsonProcessingException e) {
@@ -44,13 +41,11 @@ public class GuarantorDetailsServiceImpl implements GuarantorDetailsService
 		return null;
 	}
 
-
-
 	@Override
-	public List<GuarantorDetails> getAllGurantor()
+	public List<Mortage> getAllMortage() 
 	{
-		return gdr.findAll();
-		
+	
+		return mr.findAll();
 	}
 
 }

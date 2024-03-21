@@ -19,11 +19,13 @@ public class CustomerAddress
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long customerAddressId;
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	private PermenantAddress permenantAddress;
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	private LocalAddress localAddress;
-
+	
 }
 
 

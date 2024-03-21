@@ -36,7 +36,8 @@ public class Ledger
 	private int defaulterCount;
 	private String previousEmiStatus;
 	private String currentMonthEmiStatus;
-	private String loanEndDate;
+	@Temporal(TemporalType.DATE)
+	private Date loanEndDate;
 	private String loanStatus;
 
 }

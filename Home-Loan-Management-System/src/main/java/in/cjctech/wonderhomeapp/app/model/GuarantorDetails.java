@@ -30,11 +30,11 @@ public class GuarantorDetails
 	private String guarantorRelationshipWithApplicant;
 	private long guarantorMobileNumber;
 	private long aadhaarcardNumber;
-	private String guarantorCityName;
 	private String guarantorJobDetails;
+	private String guarantorCityName;
 	private String guarantorAreaName;
 	@Lob
 	@Column(length=99999999)
-	private byte[] adhaar;
+	private byte[] gadhaar;
 	
 }
