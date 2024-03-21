@@ -11,4 +11,6 @@ public interface EnquiryRepository extends JpaRepository<Enquiry, Long> {
 
 	public Optional<Enquiry> findAllByCustomerId(long customerId);
 
+	
+
 }

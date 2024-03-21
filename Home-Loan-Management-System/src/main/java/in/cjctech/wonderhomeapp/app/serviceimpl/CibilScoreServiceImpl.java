@@ -23,9 +23,9 @@ public class CibilScoreServiceImpl implements CibilService
 	EnquiryRepository er;
 	
 	@Override
-	public CibilScore addCibil(long applicantid, CibilScore cb) 
+	public CibilScore addCibil(long customerid, CibilScore cb) 
 	{
-		Optional<Enquiry> e=er.findAllByApplicantId(applicantid);
+		Optional<Enquiry> e=er.findAllByCustomerId(customerid);
 		if(e.isPresent())
 		{
 			Enquiry e1=e.get();

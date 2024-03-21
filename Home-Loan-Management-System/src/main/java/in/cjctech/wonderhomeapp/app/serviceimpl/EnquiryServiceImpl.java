@@ -23,7 +23,7 @@ public class EnquiryServiceImpl implements EnquiryService {
 	@Override
 	public void  addCibilScore(long customerId, CibilScore cibilscore) 
 	{
-		Optional<Enquiry> e=er.findAllByApplicantId(customerId);
+		Optional<Enquiry> e=er.findAllByCustomerId(customerId);
 		if(e.isPresent())
 		{		
 				Enquiry e1=e.get();
