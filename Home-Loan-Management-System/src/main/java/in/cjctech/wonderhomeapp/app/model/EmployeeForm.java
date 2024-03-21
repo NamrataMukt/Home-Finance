@@ -19,11 +19,13 @@ public class EmployeeForm
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int empId;
+	private String empName;
 	private String empUserName;
 	private String empUserPassword;
 	private String email;
 	private Long mobileNumber;
 	private String designation;
+	private String userType;
 
 }
 

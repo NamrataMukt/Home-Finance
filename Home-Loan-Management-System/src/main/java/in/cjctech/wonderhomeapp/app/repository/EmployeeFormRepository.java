@@ -8,5 +8,7 @@ import in.cjctech.wonderhomeapp.app.model.EmployeeForm;
 @Repository
 public interface EmployeeFormRepository extends JpaRepository<EmployeeForm, Integer>
 {
+
+	
 	
 }
