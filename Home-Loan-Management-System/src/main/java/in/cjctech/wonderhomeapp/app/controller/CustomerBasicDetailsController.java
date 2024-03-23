@@ -24,7 +24,8 @@ public class CustomerBasicDetailsController
 	public ResponseEntity<CustomerBasicDetails> saveCustomerData(@RequestBody CustomerBasicDetails cbd )
 	{
 			CustomerBasicDetails cb=cas.saveCustomerData(cbd);
-		return new ResponseEntity<CustomerBasicDetails>(cb,HttpStatus.CREATED);
+			
+			return new ResponseEntity<CustomerBasicDetails>(cb,HttpStatus.CREATED);
 	}
 
 		

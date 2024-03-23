@@ -25,7 +25,7 @@ public class EmploymentDetailsController {
 
 	 @PostMapping("/EmploymentDetails")
 	 public ResponseEntity<EmploymentDetails> saveEmploymentDetails(@RequestPart("employmentdetails") String employmentDetails,
-			                                              @RequestPart("salaryslip") MultipartFile salarySlip){
+			                                              @RequestPart("salarySlip") MultipartFile salarySlip){
 			                                            	  
 			EmploymentDetails ed=es.addEmploymentDetails(employmentDetails,salarySlip);                                             
 	 return new ResponseEntity<EmploymentDetails>(ed,HttpStatus.OK);

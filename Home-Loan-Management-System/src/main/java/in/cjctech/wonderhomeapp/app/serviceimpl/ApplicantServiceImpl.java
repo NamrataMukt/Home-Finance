@@ -1,4 +1,6 @@
 package in.cjctech.wonderhomeapp.app.serviceimpl;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -59,9 +61,6 @@ public class ApplicantServiceImpl implements ApplicantService
 						cd.setGuarantorDetails(gd);
 						gd.setGadhaar(Gaadhar.getBytes());
 						CustomerBankDetails cbank=cd.getCustomerbankDetail();
-						
-		
-			
 			gd.setGadhaar(Gaadhar.getBytes());
 			
 					BuilderDetails bd=cd.getBuilderdetails();
@@ -77,19 +76,9 @@ public class ApplicantServiceImpl implements ApplicantService
 									cdu.setBankCheque(cheque.getBytes());
 									cdu.setBankStatment(statment.getBytes());
 									cdu.setIncometaxReturn(tax.getBytes());
-									
-					
 				cd.setBuilderdetails(bd);
 					cd.setDocumentUpload(cdu);
-					
-				   cd.setCustomerbankDetail(cbank);
-					
-					
-					
-					
-					
-					
-					
+				   cd.setCustomerbankDetail(cbank);			
 		ar.save(cd);			
 							
 		}
@@ -98,6 +87,12 @@ public class ApplicantServiceImpl implements ApplicantService
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	@Override
+	public List<CustomerApplicationForm> getalldata() 
+	{
+		return ar.findAll();
 	}
 	
 	

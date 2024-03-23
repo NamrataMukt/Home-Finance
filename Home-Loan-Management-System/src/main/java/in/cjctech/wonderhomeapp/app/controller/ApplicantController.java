@@ -1,11 +1,15 @@
 package in.cjctech.wonderhomeapp.app.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,7 +25,7 @@ public class ApplicantController
 	ApplicantService as;
 
 	@PostMapping("/saveApplicant")
-	public ResponseEntity<CustomerApplicationForm> getApplicant(@RequestPart("applicantdata") String  applicant,
+	public ResponseEntity<CustomerApplicationForm> saveApplicant(@RequestPart("applicantdata") String  applicant,
 																@RequestPart("salarySlip") MultipartFile salaryslip,
 																@RequestPart("Gaadhar") MultipartFile Gaadhar,
 																@RequestPart("Baadhar") MultipartFile Baadhar,
@@ -38,6 +42,18 @@ public class ApplicantController
 	{	
 		CustomerApplicationForm cf1=as.saveApplicant(applicant,salaryslip,Gaadhar,Baadhar,BPan,propertyProof,panCard,aadhar,address,cheque,photo,sign,tax,statment);
 		return new ResponseEntity<CustomerApplicationForm>(cf1,HttpStatus.CREATED);
+		
+		
 	}
+	
+	
+		@GetMapping("/getApplicant")
+		public ResponseEntity<List<CustomerApplicationForm>> getApplicant()
+		{
+				List<CustomerApplicationForm> list1=as.getalldata();
+			return new ResponseEntity<List<CustomerApplicationForm>>(list1,HttpStatus.CREATED);
+		}
+		
+		
 	
 	}
