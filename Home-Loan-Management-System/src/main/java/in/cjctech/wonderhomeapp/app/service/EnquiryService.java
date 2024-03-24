@@ -16,4 +16,7 @@ public interface EnquiryService {
 	Enquiry getCibilScoreByApplicantId(Long customerId);
 
 
+	public void deleteEnquiry(Long customerId);
+
+
 }

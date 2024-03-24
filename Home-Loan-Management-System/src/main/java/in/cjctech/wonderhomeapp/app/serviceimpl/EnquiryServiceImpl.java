@@ -50,8 +50,13 @@ public class EnquiryServiceImpl implements EnquiryService {
 
 	@Override
 	public Enquiry getCibilScoreByApplicantId(Long customerId) {
-		// TODO Auto-generated method stub
 		return er.findByCustomerId(customerId);
+	}
+
+	@Override
+	public void deleteEnquiry(Long customerId) {
+		er.deleteById(customerId);
+		
 	}
 
 	

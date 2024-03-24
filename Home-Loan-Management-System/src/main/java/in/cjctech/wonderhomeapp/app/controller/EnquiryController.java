@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -51,9 +52,19 @@ public class EnquiryController
         Enquiry cibilScore = es.getCibilScoreByApplicantId(customerId);
        
             return ResponseEntity.ok(cibilScore);
-        
-            
-  
     }
+    
+    @DeleteMapping("/Customers/{customerId}")
+    public ResponseEntity<?> deleteEnquiry(@PathVariable Long customerId) {
+        try {
+            es.deleteEnquiry(customerId);
+            return ResponseEntity.ok("Enquiry with ID " + customerId + " deleted successfully.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                                 .body("Failed to delete enquiry with ID " + customerId + ": " + e.getMessage());
+        }
+    }
+    
+    
 
 }
