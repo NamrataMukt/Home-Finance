@@ -59,5 +59,10 @@ public class EnquiryServiceImpl implements EnquiryService {
 		
 	}
 
+	@Override
+	public Enquiry getEnquiryById(long customerId) {
+		return er.findByCustomerId(customerId);
+	}
+
 	
 }

@@ -19,4 +19,7 @@ public interface EnquiryService {
 	public void deleteEnquiry(Long customerId);
 
 
+	public Enquiry getEnquiryById(long customerId);
+
+
 }

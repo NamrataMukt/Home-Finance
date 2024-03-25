@@ -65,6 +65,38 @@ public class EnquiryController
         }
     }
     
+    @PutMapping("/updateEnquiryStatus/{customerId}")
+    public ResponseEntity<?> updateEnquiryStatus(@PathVariable long customerId) {
+        try {
+            // Retrieve the enquiry by its ID
+            Enquiry updatedEnquiry = es.getEnquiryById(customerId);
+            if (updatedEnquiry == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Enquiry not found with ID " + customerId);
+            }
+
+            // Check if the CIBIL score is available
+            CibilScore cibilScore = updatedEnquiry.getCibilScore();
+            if (cibilScore == null) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("CIBIL score is not available for enquiry with ID " + customerId);
+            }
+
+            // Update the status based on the CIBIL score
+            if (cibilScore.getCibilScore() >= 700) {
+            	updatedEnquiry.setStatus("Approved");
+            } else {
+            	updatedEnquiry.setStatus("Rejected");
+            }
+
+            // Save the updated enquiry
+            es.updateEnquiry(customerId,updatedEnquiry);
+
+            return ResponseEntity.ok("Enquiry status updated successfully for ID " + customerId);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                                 .body("Failed to update enquiry status for ID " + customerId + ": " + e.getMessage());
+        }
+    }
+    
     
 
 }
