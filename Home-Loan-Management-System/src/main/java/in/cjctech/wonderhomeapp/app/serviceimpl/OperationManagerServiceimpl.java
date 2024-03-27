@@ -3,6 +3,7 @@ package in.cjctech.wonderhomeapp.app.serviceimpl;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import in.cjctech.wonderhomeapp.app.model.Enquiry;
 import in.cjctech.wonderhomeapp.app.repository.OperationManagerRepository;
