@@ -8,5 +8,5 @@ import in.cjctech.wonderhomeapp.app.model.SanctionLetter;
 @Repository
 public interface SanctionLetterRepository  extends JpaRepository<SanctionLetter,Long>
 {
-
+      public SanctionLetter findById(long id);
 }

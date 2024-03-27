@@ -1,11 +1,16 @@
 package in.cjctech.wonderhomeapp.app.controller;
 
+import java.io.ByteArrayInputStream;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,5 +38,20 @@ public class SancationLetterController
 			List<SanctionLetter> list1=ss.getAll();
 			return new ResponseEntity<>(list1,HttpStatus.OK);
 		}
+		
+		@GetMapping("/getSanctionLetter/{sanctionId}")
+		public ResponseEntity<InputStreamResource> createPdf(@PathVariable("sanctionId") long id)
+		
+			{
+				ByteArrayInputStream inputArray=ss.generatePdf(id);
+				
+				HttpHeaders headers=new HttpHeaders();
+				headers.set("Content-Disposition","inline; filename = Sanction-Letter.pdf");
+				
+				return ResponseEntity.ok().headers(headers).contentType(MediaType.APPLICATION_PDF).body(new InputStreamResource(inputArray));
+			}
+			
+			
+		
 
 }

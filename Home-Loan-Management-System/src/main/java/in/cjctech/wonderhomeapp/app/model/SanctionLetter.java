@@ -39,12 +39,13 @@ public class SanctionLetter
 //	"sanctionDate":"12-03-2024",
 //	"applicantName":"Am",
 //	"contactDetails":"cel",
+//	"applicantemailid":"am@gmail.com",
+//	"tokenamountForHome":20000,
 //	"loanAmountSanctioned":900000,
-//	"interestType":"xyz",
-//	"rateOfInterest":7.7,
-//	"loanTenure":2,
-//	"monthlyEmiAmount":4000,
-//	"modeOfPayment":"mno"
-//	
-//	
+//	"rateOfInterest":7,
+//	"loanTenure":12,
+//	"monthlyEmiAmount":10000,
+//	"sanctionstatus":app
+//
+//
 //}
