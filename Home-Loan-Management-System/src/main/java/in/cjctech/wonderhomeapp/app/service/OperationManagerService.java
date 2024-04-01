@@ -8,4 +8,5 @@ public interface OperationManagerService {
 
 	public List<Enquiry> getAllEnquiry();
 
+
 }

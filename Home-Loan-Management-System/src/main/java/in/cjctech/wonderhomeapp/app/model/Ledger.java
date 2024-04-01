@@ -32,7 +32,7 @@ public class Ledger
 	private double amountPaidTillDate;
 	private double remainingAmount;
 	@Temporal(TemporalType.DATE)
-	private Date EmiPayDate;
+	private Date emiPayDate;
 	private int defaulterCount;
 	private String loanStatus; 
 
