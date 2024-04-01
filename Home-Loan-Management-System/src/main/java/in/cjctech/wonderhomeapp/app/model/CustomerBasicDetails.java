@@ -36,5 +36,9 @@ public class CustomerBasicDetails
 	private String cibilScoreStatus;
 	private long tokenmoney;
 	private long loanRequired;
+	public String getStatusCode() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 		
 }

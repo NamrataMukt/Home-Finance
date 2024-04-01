@@ -14,4 +14,6 @@ public interface SanctionLetterService
 
 	public ByteArrayInputStream generatePdf(long id);
 
+	public void getDataBysanctionId(long id);
+
 }
