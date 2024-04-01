@@ -7,13 +7,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import in.cjctech.wonderhomeapp.app.model.EmploymentDetails;
-import in.cjctech.wonderhomeapp.app.model.Enquiry;
+
 import in.cjctech.wonderhomeapp.app.service.EmploymentDetailsService;
 
 @RestController
@@ -25,9 +24,9 @@ public class EmploymentDetailsController {
 
 	 @PostMapping("/EmploymentDetails")
 	 public ResponseEntity<EmploymentDetails> saveEmploymentDetails(@RequestPart("employmentdetails") String employmentDetails,
-			                                              @RequestPart("salarySlip") MultipartFile salarySlip){
+			                                              @RequestPart("slip") MultipartFile salaryslip){
 			                                            	  
-			EmploymentDetails ed=es.addEmploymentDetails(employmentDetails,salarySlip);                                             
+			EmploymentDetails ed=es.addEmploymentDetails(employmentDetails,salaryslip);                                             
 	 return new ResponseEntity<EmploymentDetails>(ed,HttpStatus.OK);
 	 
 	 

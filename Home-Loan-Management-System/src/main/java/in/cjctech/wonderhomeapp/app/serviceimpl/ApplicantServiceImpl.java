@@ -1,5 +1,6 @@
 package in.cjctech.wonderhomeapp.app.serviceimpl;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,8 +43,8 @@ public class ApplicantServiceImpl implements ApplicantService
 		{
 			CustomerApplicationForm cd=mapper.readValue(applicant,CustomerApplicationForm.class);
 						
-					CustomerBasicDetails cb=cd.getCutomerDetails();
-								cd.setCutomerDetails(cb);
+					CustomerBasicDetails cb=cd.getCustomerDetails();
+								cd.setCustomerDetails(cb);
 						DependantDetails dd=cd.getApplicantDependant();
 								cd.setApplicantDependant(dd);
 						CustomerAddress ad=cd.getCustomerAddress();
@@ -51,7 +52,10 @@ public class ApplicantServiceImpl implements ApplicantService
 						ad.setLocalAddress(cd.getCustomerAddress().getLocalAddress());
 						ad.setPermenantAddress(cd.getCustomerAddress().getPermenantAddress());
 						EmploymentDetails ed=cd.getEmploymentDetails();
-							cd.setEmploymentDetails(ed);
+							
+						cd.setEmploymentDetails(ed);
+						ed.setSalaryslip(salaryslip.getBytes());
+							
 						PreviousLoanDetails pd=cd.getPreviousloandata();
 							cd.setPreviousloandata(pd);
 						Mortage m=cd.getMortage();
@@ -94,6 +98,39 @@ public class ApplicantServiceImpl implements ApplicantService
 	{
 		return ar.findAll();
 	}
+
+	@Override
+	public void deleteData(long applicationNumber) 
+	{
+	
+		 ar.deleteById(applicationNumber);
+		
+	}
+
+	@Override
+	public CustomerApplicationForm getfindData(long applicationNumber) 
+	{
+	
+		 Optional<CustomerApplicationForm>  caf= ar.findById(applicationNumber);
+		 			if(caf.isPresent())
+		 			{
+		 				return caf.get();
+		 			}
+					return null;
+		 			
+	}
+
+	@Override
+	public List<CustomerApplicationForm> getuserStatus(String status) 
+	{	
+		List<CustomerApplicationForm> list=ar.findCustomerByStatus(status);
+		return list;
+	}
+
+	
+
+					
+	
 	
 	
 	

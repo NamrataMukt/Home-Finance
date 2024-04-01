@@ -9,7 +9,7 @@ import in.cjctech.wonderhomeapp.app.model.EmploymentDetails;
 public interface EmploymentDetailsService {
 
 
-	public EmploymentDetails addEmploymentDetails(String employmentDetails, MultipartFile salarySlip);
+	public EmploymentDetails addEmploymentDetails(String employmentDetails, MultipartFile salaryslip);
 
 	public List<EmploymentDetails> getAllEmployement();
 

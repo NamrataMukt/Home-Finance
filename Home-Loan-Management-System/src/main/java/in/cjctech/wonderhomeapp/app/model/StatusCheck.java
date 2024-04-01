@@ -17,10 +17,7 @@ public class StatusCheck {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long statusId;
-	private long customerId;
-	private String customerName;
-	private long customerMobileNumber;
-	private String customerEmailId;
+	private long applicationNumber;
 	public String status;
 	
 }

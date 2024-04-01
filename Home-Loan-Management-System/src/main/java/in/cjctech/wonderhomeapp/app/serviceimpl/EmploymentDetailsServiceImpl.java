@@ -20,13 +20,13 @@ public class EmploymentDetailsServiceImpl implements EmploymentDetailsService {
 	private EmploymentDetailsRepository er;
 
 	
-	public EmploymentDetails addEmploymentDetails(String employmentDetails, MultipartFile salarySlip) {
+	public EmploymentDetails addEmploymentDetails(String employmentDetails, MultipartFile salaryslip) {
 		
 		ObjectMapper mapper = new ObjectMapper();
 		
 		try {
 			EmploymentDetails employmentdetails=mapper.readValue(employmentDetails, EmploymentDetails.class);
-			employmentdetails.setSalarySlip(salarySlip.getBytes());
+			employmentdetails.setSalaryslip(salaryslip.getBytes());
 			
 			er.save(employmentdetails);
 			
@@ -37,6 +37,7 @@ public class EmploymentDetailsServiceImpl implements EmploymentDetailsService {
 			e.printStackTrace();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
 		
