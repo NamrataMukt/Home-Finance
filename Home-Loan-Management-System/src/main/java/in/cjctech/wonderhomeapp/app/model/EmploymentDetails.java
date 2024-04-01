@@ -23,10 +23,9 @@ public class EmploymentDetails
 	private double salary;
 	private String profDesignation;
 	private int employeeWorkingPeriod;
-
 	@Lob
 	@Column(length=999999999)
-	private byte[] salarySlip;
+	private byte[] salaryslip;
 	
 
 }

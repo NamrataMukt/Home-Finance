@@ -1,15 +1,15 @@
 package in.cjctech.wonderhomeapp.app.serviceimpl;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import in.cjctech.wonderhomeapp.app.model.SanctionLetter;
 import in.cjctech.wonderhomeapp.app.repository.SanctionLetterRepository;
 import in.cjctech.wonderhomeapp.app.service.SanctionLetterService;
-import in.cjctech.wonderhomeapp.app.utility.SanctionLetterPdf;
+
 
 @Service
 public class SanctionLetterServiceImpl implements SanctionLetterService
@@ -33,13 +33,12 @@ public class SanctionLetterServiceImpl implements SanctionLetterService
 	}
 
 	@Override
-	public ByteArrayInputStream generatePdf(long id)
+	public SanctionLetter findbysid(long sid) 
 	{
-		SanctionLetter letter=sr.findById(id);
-		
-		ByteArrayOutputStream pdfArray=SanctionLetterPdf.generatePdf(letter);
-		byte[] pdf=pdfArray.toByteArray();
-		return new ByteArrayInputStream(pdfArray.toByteArray());
+	
+		SanctionLetter list1=  sr.findById(sid);
+		return list1;
 	}
 
+	
 }

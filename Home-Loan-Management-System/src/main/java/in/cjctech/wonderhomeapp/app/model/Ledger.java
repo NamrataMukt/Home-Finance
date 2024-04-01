@@ -23,6 +23,8 @@ public class Ledger
 	private long ledgerId;
 	@Temporal(TemporalType.DATE)
 	private Date ledgerCreatedDate;
+	private long loannumber;
+	private String customername;
 	private double totalLoanAmount;
 	private double payableAmountWithInterest;
 	private int tenure;
@@ -30,15 +32,9 @@ public class Ledger
 	private double amountPaidTillDate;
 	private double remainingAmount;
 	@Temporal(TemporalType.DATE)
-	private Date nextEmiDateStart;
-	@Temporal(TemporalType.DATE)
-	private Date nextEmiDateEnd;
+	private Date EmiPayDate;
 	private int defaulterCount;
-	private String previousEmiStatus;
-	private String currentMonthEmiStatus;
-	@Temporal(TemporalType.DATE)
-	private Date loanEndDate;
-	private String loanStatus;
+	private String loanStatus; 
 
 }
 /*

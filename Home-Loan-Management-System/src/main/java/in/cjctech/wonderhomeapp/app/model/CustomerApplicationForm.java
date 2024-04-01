@@ -21,7 +21,7 @@ public class CustomerApplicationForm
 	private long applicationNumber;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	private CustomerBasicDetails cutomerDetails;
+	private CustomerBasicDetails customerDetails;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private DependantDetails applicantDependant;
@@ -50,6 +50,7 @@ public class CustomerApplicationForm
 	@OneToOne(cascade = CascadeType.ALL)
 	private CustomerDocumentUpload documentUpload;
 	
-	
+	@OneToOne(cascade = CascadeType.ALL)
+	private StatusCheck statuscheck;
 	
 }

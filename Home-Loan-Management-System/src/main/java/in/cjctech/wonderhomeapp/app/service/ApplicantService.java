@@ -20,5 +20,13 @@ public interface ApplicantService {
 
 	public List<CustomerApplicationForm> getalldata();
 
+	public void deleteData(long applicationNumber);
 
+	public CustomerApplicationForm getfindData(long applicationNumber);
+
+	public List<CustomerApplicationForm> getuserStatus(String status);
+
+	
+
+	
 }
